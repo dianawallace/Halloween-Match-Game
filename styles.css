@@ -19,3 +19,8 @@ html {
   cursor: url("Assets/Cursors/Ghost.cur"), auto;
 }
 
+body {
+  margin: 0;
+  background: radial-gradient(#9d5900, #3d2200);
+}
+
