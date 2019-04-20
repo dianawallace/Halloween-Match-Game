@@ -24,3 +24,11 @@ body {
   background: radial-gradient(#9d5900, #3d2200);
 }
 
+.page-title {
+  color: #ff6d00;
+  font-family: Nosifer, cursive;
+  font-weight: normal;
+  text-align: center;
+  font-size: 6em;
+}
+
