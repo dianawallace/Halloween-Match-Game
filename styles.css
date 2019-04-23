@@ -38,3 +38,7 @@ body {
   justify-content: space-between;
 }
 
+.game-info {
+  font-family: Creepster, cursive;
+  color: #ffbb89;
+  font-size: 4em;
