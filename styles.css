@@ -68,3 +68,15 @@ body {
   color: #ff6d00;
   font-family: Creepster, serif;
 }
+
+
+.card-back {
+  background-color: black;
+  border-color: orange;
+}
+
+.card-front {
+  background-color: #ffbb89;
+  border-color: #333;
+  transform: rotateY(180deg);
+}
