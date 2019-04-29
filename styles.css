@@ -85,15 +85,45 @@ body {
   transition: transform 500ms ease-in-out;
 }
 
-
-.card-back {
-  background-color: black;
-  border-color: orange;
+.cob-web {
+  position: absolute;
+  width: 47px;
+  height: 47px;
+  transition: width 100ms ease-in-out, height 100ms ease-in-out;
 }
 
-.card-front {
-  background-color: #ffbb89;
-  border-color: #333;
-  transform: rotateY(180deg);
+.cob-web-top-left {
+  transform: rotate(270deg);
+  top: 0;
+  left: 0;
+}
+
+.cob-web-top-right {
+  top: 0;
+  right: 0;
+}
+
+.cob-web-bottom-left {
+  transform: rotate(180deg);
+  bottom: 0;
+  left: 0;
+}
+
+.cob-web-bottom-right {
+  transform: rotate(90deg);
+  bottom: 0;
+  right: 0;
+}
+
+.spider {
+  align-self: flex-start;
+  height: 135px;
+  width: 90px;
+  transform: translateY(-10px);
+  transition: transform 100ms ease-in-out;
+}
+
+.card-back:hover .spider {
+  transform: translateY(0);
 }
 
