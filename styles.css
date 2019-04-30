@@ -92,6 +92,11 @@ body {
   transition: width 100ms ease-in-out, height 100ms ease-in-out;
 }
 
+.card-face:hover .cob-web {
+  width: 52px;
+  height: 52px;
+}
+
 .cob-web-top-left {
   transform: rotate(270deg);
   top: 0;
