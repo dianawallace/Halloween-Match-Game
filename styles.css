@@ -82,6 +82,32 @@ body {
   transition: transform 500ms ease-in-out;
 }
 
+
+.card.visible .card-back {
+  transform: rotateY(180deg);
+}
+
+.card.visible .card-front {
+  transform: rotateY(0);
+}
+
+.card.matched .card-value {
+  animation: dance 1s linear infinite 500ms;
+}
+
+@keyframes dance {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-30deg);
+  }
+  75% {
+    transform: rotate(30deg);
+  }
+}
+
 .card-back {
   background-color: black;
   border-color: orange;
@@ -149,3 +175,42 @@ body {
   transform: translateY(0);
 }
 
+.bat {
+  width: 115px;
+  height: 60px;
+}
+
+.ghost {
+  width: 100px;
+  height: 100px;
+}
+
+.skull {
+  width: 100px;
+  height: 100px;
+}
+
+.dracula {
+  width: 100px;
+  height: 100px;
+}
+
+.eye {
+  width: 100px;
+  height: 100px;
+}
+
+.pumpkin {
+  width: 100px;
+  height: 100px;
+}
+
+.cauldron {
+  width: 100px;
+  height: 100px;
+}
+
+.bones {
+  width: 100px;
+  height: 100px;
+}
