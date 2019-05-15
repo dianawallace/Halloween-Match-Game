@@ -63,7 +63,13 @@ class MixOrMatch {
     }
   }
 
+}
 
+ canFlipCard(card) {
+    return (
+      !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck
+    );
+  }
 }
 
 function ready() {
