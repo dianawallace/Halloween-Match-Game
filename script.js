@@ -49,6 +49,21 @@ class MixOrMatch {
     this.timeRemaining = this.totalTime;
     this.matchedCards = [];
     this.busy = true;
+    setTimeout(() => {
+      this.audioController.startMusic();
+      this.shuffleCards();
+      this.countDown = this.startCountDown();
+      this.busy = false;
+    }, 500);
+    this.hideCards();
+    this.timer.innerText = this.timeRemaining;
+    this.ticker.innerText = this.totalClicks;
+  }
+   hideCards() {
+    this.cardsArray.forEach(card => {
+      card.classList.remove("visible");
+      card.classList.remove("matched");
+    });
   }
   
    flipCard(card) {
