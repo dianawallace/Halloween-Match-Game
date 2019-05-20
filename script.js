@@ -77,6 +77,16 @@ class MixOrMatch {
       else this.cardToCheck = card;
     }
   }
+  
+   startCountDown() {
+    return setInterval(() => {
+      this.timeRemaining--;
+      this.timer.innerText = this.timeRemaining;
+      if (this.timeRemaining === 0) this.gameOver();
+    }, 1000);
+  }
+  
+
 
  shuffleCards() {
     for (let i = this.cardsArray.length - 1; i > 0; i--) {
@@ -87,9 +97,9 @@ class MixOrMatch {
   }
 
  canFlipCard(card) {
-    return (
-      !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck
-    );
+    return true; 
+    //  !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck
+    
   }
 }
 
