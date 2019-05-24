@@ -66,19 +66,25 @@ class MixOrMatch {
     });
   }
   
-   flipCard(card) {
+  flipCard(card) {
     if (this.canFlipCard(card)) {
       this.audioController.flip();
       this.totalClicks++;
       this.ticker.innerText = this.totalClicks;
       card.classList.add("visible");
 
-      if (this.cardToCheck) this.checkForCardMatch(card);
-      else this.cardToCheck = card;
+      if (this.cardToCheck) 
+        this.checkForCardMatch(card);
+      else 
+        this.cardToCheck = card;
     }
   }
   
-   startCountDown() {
+  getCardType(card) {
+    return card.getElementsByClassName("card-value")[0].src;
+  }
+  
+  startCountDown() {
     return setInterval(() => {
       this.timeRemaining--;
       this.timer.innerText = this.timeRemaining;
@@ -86,19 +92,19 @@ class MixOrMatch {
     }, 1000);
   }
   
- gameOver() {
+  gameOver() {
     clearInterval(this.countDown);
     this.audioController.gameOver();
     document.getElementById("game-over-text").classList.add("visible");
   }
   
-   victory() {
+  victory() {
     clearInterval(this.countDown);
     this.audioController.victory();
     document.getElementById("victory-text").classList.add("visible");
   }
 
- shuffleCards() {
+  shuffleCards() {
     for (let i = this.cardsArray.length - 1; i > 0; i--) {
       let randomIndex = Math.floor(Math.random() * (i + 1));
       this.cardsArray[randomIndex].style.order = i;
@@ -106,12 +112,12 @@ class MixOrMatch {
     }
   }
 
- canFlipCard(card) {
+  canFlipCard(card) {
     return true; 
     //  !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck
     
+    }
   }
-}
 
 function ready() {
   let overlays = Array.from(document.getElementsByClassName("overlay-text"));
