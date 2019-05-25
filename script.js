@@ -42,7 +42,6 @@ class MixOrMatch {
     this.ticker = document.getElementById("flips");
     this.audioController = new AudioController();
   }
-  
   startGame() {
     this.cardToCheck = null;
     this.totalClicks = 0;
@@ -65,7 +64,6 @@ class MixOrMatch {
       card.classList.remove("matched");
     });
   }
-  
   flipCard(card) {
     if (this.canFlipCard(card)) {
       this.audioController.flip();
@@ -79,11 +77,19 @@ class MixOrMatch {
         this.cardToCheck = card;
     }
   }
+  checkForCardMatch(card) {
+    if (this.getCardType(card) === this.getCardType(this.cardToCheck))
+      this.cardMatch(card, this.cardToCheck);
+    else 
+      this.cardMisMatch(card, this.cardToCheck);
+
+    this.cardToCheck = null;
+  }
+  
   
   getCardType(card) {
     return card.getElementsByClassName("card-value")[0].src;
   }
-  
   startCountDown() {
     return setInterval(() => {
       this.timeRemaining--;
