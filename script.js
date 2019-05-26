@@ -85,6 +85,15 @@ class MixOrMatch {
 
     this.cardToCheck = null;
   }
+   cardMatch(card1, card2) {
+    this.matchedCards.push(card1);
+    this.matchedCards.push(card2);
+    card1.classList.add("matched");
+    card2.classList.add("matched");
+    this.audioController.match();
+    if (this.matchedCards.length === this.cardsArray.length) 
+        this.victory();
+  }
   
   
   getCardType(card) {
