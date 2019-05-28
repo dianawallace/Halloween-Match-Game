@@ -135,8 +135,7 @@ class MixOrMatch {
   }
 
   canFlipCard(card) {
-    return true; 
-    //  !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck
+    return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck
     
     }
   }
